@@ -1,7 +1,7 @@
 "use string";
 
 class User {
-  constructor(name, surname) {
+  constructor(name,surname) {
     this.name = name;
     this.surname = surname;
   }
@@ -9,28 +9,28 @@ class User {
        return `${this.name} ${this.surname}`;
      }
   };
-  const PeopleB = new User('andy','ferguson');
-console.log(PeopleB.getInformAbout());
-// class Stydent extends User {
-//   InformAbout() {
-//     super.InformAbout;
-    
-//   }
-//   constructor(year) {
-//     this.start = year;
-//     this._data = 2022;
-//   }
-//   get Course() {
-//     return this._data - this.start;
-//   }
-//   set Course(newYear) {
-//     this.start = newYear;
-//     if (this.Course) {
-//       this.Course > 5;
-//       throw TypeError;
-//     }
-//   }
-// };
+  const NewUser = new User('Furguson','Andry');
+console.log(NewUser.getInformAbout());
+class Stydent extends User {
+ constructor(name,surname,year){
+super(year)
+this.year=year
+   }
+   getInformAbout(){
+     super.getInformAbout
+   }
+   get Course() {
+     return 2022 - this.year;
+   }
+   set Course(year) {
+     this.year = newYear;
+     if(this.year > 5 || this.year ===''){
+     throw TypeError;
+     }
+   };
+  }
+const StydentNew = new Stydent('tim','cooc',2016);
+ console.log (StydentNew.getInformAbout);
 
 // const nameGroup=[
 //   { name: 'Андрей' ,surname: "Иванов"},

@@ -13,24 +13,25 @@ class User {
 console.log(NewUser.getInformAbout());
 class Stydent extends User {
  constructor(name,surname,year){
-super(year)
-this.year=year
+   super(name,surname);
+   this.year=year;
    }
-   getInformAbout(){
-     super.getInformAbout
+   getInformAbout2(){
+     return `${this.getInformAbout()}`;
    }
-   get Course() {
+   getCourse() {
      return 2022 - this.year;
    }
-   set Course(year) {
-     this.year = newYear;
-     if(this.year > 5 || this.year ===''){
+   setCourse(year) {
+     if(this.year < 5 || this.year ===''){
      throw TypeError;
      }
    };
   }
 const StydentNew = new Stydent('tim','cooc',2016);
- console.log (StydentNew.getInformAbout);
+ console.log (StydentNew.getInformAbout2());
+ console.log(StydentNew.getCourse());
+ console.log()
 
 // const nameGroup=[
 //   { name: 'Андрей' ,surname: "Иванов"},

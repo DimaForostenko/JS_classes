@@ -11,24 +11,36 @@ class User {
   };
   const NewUser = new User('Furguson','Andry');
 console.log(NewUser.getInformAbout());
+
 class Stydent extends User {
  constructor(name,surname,year){
-   super(name,surname);
+  super(name,surname);
    this.year=year;
+   this.data=22;
    }
    getInformAbout2(){
      return `${this.getInformAbout()}`;
    }
-   getCourse() {
-     return 2022 - this.year;
+   get year() {
+     return this._year;
    }
-   setCourse(year) {
-     if(this.year < 5 || this.year ===''){
-     throw TypeError;
-     }
+   set year(year){
+    if(typeof year !=='number'){
+      throw new TypeError('value must be number');
+    };
+     if( year < 16 || year > 23 ){
+      throw new RangeError('value must be more 17');
+     };
+    this._year=year;
    };
-  }
-const StydentNew = new Stydent('tim','cooc',2016);
+getCourse(){
+  return this.data-this.year;
+}
+  
+     };
+   
+  
+const StydentNew = new Stydent('tim','cooc',18);
  console.log (StydentNew.getInformAbout2());
  console.log(StydentNew.getCourse());
  console.log()

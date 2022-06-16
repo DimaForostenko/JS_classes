@@ -28,15 +28,15 @@ class Stydent extends User {
     if(typeof year !=='number'){
       throw new TypeError('value must be number');
     };
-     if( year < 16 || year > 23 ){
-      throw new RangeError('value must be more 17');
+     if( year < new Date().getFullYear()-5 || year > new Date.getFullYear() ){
+      throw new RangeError('value must be more not exeed 5 year');
      };
     this._year=year;
    };
 getCourse(){
-  return this.data-this.year;
+  return new Date().getFullYear()-this.year;
 }
-  
+
      };
    
   
@@ -45,20 +45,21 @@ const StydentNew = new Stydent('tim','cooc',18);
  console.log(StydentNew.getCourse());
  console.log()
 
-// const nameGroup=[
-//   { name: 'Андрей' ,surname: "Иванов"},
-//   {name: "Кристина",surname:"Голкина"},
-// ]
-// class Group {
-//   constructor(Stydent, nameGroup) {
-//     this.nameGroups = nameGroup;
-//     this.Stydent = Stydent;
-//   };
-//   showStudents() {
-//     Function (...nameGroup)
-//     return `$this.name $this.surname`
-    
-//   }
+ 
+class Group {
+  constructor(Stydent, nameGroup) {
+    this.nameGroups = nameGroup;
+    this.Stydent = Stydent;
+  };
+showStudents(){
+  if (this.students.length > 0) {
+    return this.students.map((students) => students.UsersInfo());
+  }
+  throw new Error("in group mast be students");
+}
+}
 
-  
-// }
+const twoGroup = new twoGroup("Group",[
+  new Stydent('Андрей' , "Иванов",2019),
+  new Stydent("Кристина","Голкина",2020),
+ ]);
